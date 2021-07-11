@@ -2,19 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('build') {
             steps {
-                echo 'Hello World'
+                echo 'welcome to build'
             }
         }
-    
-        stage('Pull code from github') {
-            
+        stage('test') {
+            steps {
+                echo 'welcome to test'
+            }
+        }
+         stage('deploy') {
             steps {
                 git branch: 'main', url: 'https://github.com/Avi9781/demo-project.git'
             }
         }
         
-        
     }
 }
+
